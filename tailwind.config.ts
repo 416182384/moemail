@@ -59,11 +59,8 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        // 默认字体：关联全局CSS里的 --font-custom（系统字体列表）
-        sans: ['var(--font-custom)'],
-        // 保留zpix条目（防止项目引用font-zpix类），同步指向系统字体
-        zpix: ['var(--font-custom)'],
-      },
+        sans: ['var(--font-zpix)'],
+        zpix: ['var(--font-zpix)'],
       },
       keyframes: {
         "accordion-down": {
