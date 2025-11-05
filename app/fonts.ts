@@ -1,10 +1,14 @@
-// 新 app/fonts.ts 内容
-import { Noto_Sans_SC } from 'next/font/google';
+// app/fonts.ts 备选方案（系统字体）
+import { Inter } from 'next/font/google'; // 保留Next.js默认的英文字体（避免英文显示异常）
 
-// 加载 Noto Sans SC（替换成你想要的字体）
-export const customFont = Noto_Sans_SC({
-  subsets: ['latin'], // 按需加载子集（中文需加 'chinese-simplified'）
-  weight: ['400', '500', '700'], // 所需字重
-  variable: '--font-custom', // 自定义 CSS 变量名
-  display: 'swap',
+// 英文字体（按需保留，不影响中文）
+export const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
 });
+
+// 中文系统字体（直接定义变量，不加载外部文件）
+export const customFont = {
+  variable: '--font-custom',
+  className: '', // 空类名，仅用变量关联Tailwind
+};
