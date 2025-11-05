@@ -59,20 +59,11 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-      // "sans" 是 Tailwind 的默认字体，我们把它改成标准字体
-         sans: [
-           '-apple-system', 
-           'BlinkMacSystemFont', 
-           '"Helvetica Neue"', 
-           '"PingFang SC"', 
-           '"Hiragino Sans GB"', 
-           '"Microsoft YaHei"', 
-           '"微软雅黑"', 
-           'Arial', 
-           'sans-serif'
-         ],
-      // 保留 zpix 这一行，以防项目中有其他地方明确使用了 "font-zpix"
-         zpix: ['var(--font-zpix)'],
+        // 默认字体：关联全局CSS里的 --font-custom（系统字体列表）
+        sans: ['var(--font-custom)'],
+        // 保留zpix条目（防止项目引用font-zpix类），同步指向系统字体
+        zpix: ['var(--font-custom)'],
+      },
       },
       keyframes: {
         "accordion-down": {
